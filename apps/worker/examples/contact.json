@@ -1,0 +1,9 @@
+{
+  "name": "Abrir contato",
+  "steps": [
+    { "action": "open", "path": "/" },
+    { "action": "visible", "role": "heading", "name": "Seu site está no ar" },
+    { "action": "click", "role": "link", "name": "Contato" },
+    { "action": "visible", "role": "heading", "name": "Fale com a equipe" }
+  ]
+}
