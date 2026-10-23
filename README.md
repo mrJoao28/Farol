@@ -21,6 +21,10 @@ O escopo, a arquitetura proposta, o backlog e os critérios de conclusão estão
 
 GitHub App para importar repositórios autorizados; TypeScript, Next.js, Playwright, PostgreSQL, Prisma, Redis/BullMQ e Docker Compose. Farol não faz deploy: ele monitora a URL pública informada para o projeto. A primeira versão será instalável pelo próprio desenvolvedor e ficará focada em sites sob seu controle. Decisões e limites estão detalhados no [plano do MVP](docs/MVP.md).
 
+## Identidade visual
+
+A direção visual escolhida é **Vigia**: verde-escuro, creme e sinal âmbar, com foco no diagnóstico. O símbolo, a assinatura, o ícone e a arte de abertura estão em [brand/](brand/).
+
 ## Licença
 
 [MIT](LICENSE).
