@@ -4,7 +4,7 @@
 
 Farol é um projeto de monitoramento de jornadas em sites. A proposta é executar ações reais no navegador, identificar a etapa que falhou, guardar evidências e avisar quando um incidente for confirmado.
 
-> Em desenvolvimento: a interface Vigia usa dados ilustrativos. O runner já executa jornadas na demo local, mas ainda não está conectado ao painel nem agenda monitoramentos.
+> Em desenvolvimento: a interface Vigia usa projetos ilustrativos. A aba **Execuções locais** executa jornadas reais na demo e mostra histórico e evidências; ainda não há agendamento nem projetos externos.
 
 ## Executar a interface
 
@@ -13,7 +13,9 @@ npm ci
 npm run dev
 ```
 
-Abra `http://localhost:3000`. Consulte [o guia de desenvolvimento](docs/development.md) para verificações e limitações da entrega atual.
+Abra `http://127.0.0.1:3000`. Consulte [o guia de desenvolvimento](docs/development.md) para verificações e limitações da entrega atual.
+
+Para executar jornadas pelo painel, instale o Chromium, copie `apps/web/.env.example` para `apps/web/.env.local`, inicie `npm run demo` e `npm run dev` em terminais separados e abra `/runs`. Os botões executam o caso saudável ou a falha no link de contato. O resultado e a captura ficam disponíveis após recarregar a página. Essa opção só funciona no servidor de desenvolvimento local.
 
 ## Executar a primeira jornada
 
@@ -24,7 +26,7 @@ npm run journey -- examples/contact.json
 npm run journey -- examples/contact-broken.json
 ```
 
-O segundo comando termina com código `1` de propósito e registra a falha da etapa **clicar em Contato**, com screenshot e trace em `apps/worker/.farol/runs/`. Os resultados são impressos em JSON. Consulte [jornadas e evidências](docs/journeys.md) para a DSL, limites e reprodução.
+O segundo comando termina com código `1` de propósito e registra a falha da etapa **clicar em Contato**, com screenshot e trace em `apps/worker/.farol/runs/`. Ambas as execuções gravam `result.json` e aparecem no histórico do painel local quando habilitado. Consulte [jornadas e evidências](docs/journeys.md) para a DSL, limites e reprodução.
 
 O escopo, a arquitetura proposta, o backlog e os critérios de conclusão estão em [docs/MVP.md](docs/MVP.md).
 
