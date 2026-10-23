@@ -7,7 +7,8 @@
     "build": "npm run build --workspace @farol/web",
     "start": "npm run start --workspace @farol/web",
     "typecheck": "npm run typecheck --workspace @farol/web",
-    "lint": "npm run lint --workspace @farol/web"
+    "lint": "npm run lint --workspace @farol/web",
+    "demo": "npm run start --workspace @farol/demo-site"
   },
   "engines": { "node": ">=20.9.0" }
 }
