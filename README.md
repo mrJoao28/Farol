@@ -4,7 +4,7 @@
 
 Farol é um projeto de monitoramento de jornadas em sites. A proposta é executar ações reais no navegador, identificar a etapa que falhou, guardar evidências e avisar quando um incidente for confirmado.
 
-> Em desenvolvimento: a interface Vigia já pode ser executada localmente. Os dados do painel são ilustrativos; o monitoramento ainda não foi implementado.
+> Em desenvolvimento: a interface Vigia usa dados ilustrativos. O runner já executa jornadas na demo local, mas ainda não está conectado ao painel nem agenda monitoramentos.
 
 ## Executar a interface
 
@@ -14,6 +14,17 @@ npm run dev
 ```
 
 Abra `http://localhost:3000`. Consulte [o guia de desenvolvimento](docs/development.md) para verificações e limitações da entrega atual.
+
+## Executar a primeira jornada
+
+Instale o Chromium uma vez com `npx playwright install chromium --only-shell`. Em um terminal, execute `npm run demo`. Em outro:
+
+```bash
+npm run journey -- examples/contact.json
+npm run journey -- examples/contact-broken.json
+```
+
+O segundo comando termina com código `1` de propósito e registra a falha da etapa **clicar em Contato**, com screenshot e trace em `apps/worker/.farol/runs/`. Os resultados são impressos em JSON. Consulte [jornadas e evidências](docs/journeys.md) para a DSL, limites e reprodução.
 
 O escopo, a arquitetura proposta, o backlog e os critérios de conclusão estão em [docs/MVP.md](docs/MVP.md).
 

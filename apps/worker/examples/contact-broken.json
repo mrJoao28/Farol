@@ -1,0 +1,9 @@
+{
+  "name": "Abrir contato (falha demonstrativa)",
+  "steps": [
+    { "action": "open", "path": "/?broken=1" },
+    { "action": "visible", "role": "heading", "name": "Seu site está no ar" },
+    { "action": "click", "role": "link", "name": "Contato" },
+    { "action": "visible", "role": "heading", "name": "Fale com a equipe" }
+  ]
+}
