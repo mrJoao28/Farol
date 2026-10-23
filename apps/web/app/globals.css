@@ -110,6 +110,20 @@ h1 span { color: var(--amber); }
 .detail-next { border-top: 1px solid var(--line); padding-top: 23px; margin-top: 30px; display: grid; grid-template-columns: 180px 1fr; gap: 20px; }
 .detail-next span { font-size: 11px; color: var(--amber); letter-spacing: 1px; }
 .detail-next p { color: var(--muted); font-size: 12px; margin: 0; }
+.preview-note a, .detail-next a, .evidence-bottom a { color: var(--amber); text-decoration: underline; text-underline-offset: 3px; }
+.run-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 28px 0 0; }
+.run-actions form { margin: 0; }
+.run-actions button { cursor: pointer; font-family: inherit; }
+.run-alert { border: 1px solid var(--coral); color: var(--text); padding: 13px 16px; font-size: 13px; margin: 18px 0; }
+.run-empty { padding: 30px 0; color: var(--muted); font-size: 13px; }
+.run-row { display: grid; grid-template-columns: 100px minmax(160px, 1fr) 155px 60px 20px; gap: 14px; align-items: center; border-bottom: 1px solid var(--line); padding: 18px 10px; font-size: 12px; }
+.run-row:hover { background: var(--surface); }
+.run-row strong { font-size: 14px; }
+.run-row > span:nth-child(3), .run-row > span:nth-child(4) { color: var(--muted); }
+.run-error { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 180px; overflow: auto; }
+.success-label { color: var(--success); }
+.run-screenshot { flex: 1; display: grid; place-items: center; padding: 18px; }
+.run-screenshot img { width: 100%; height: auto; max-height: 420px; object-fit: contain; border: 1px solid var(--line); }
 
 @media (max-width: 980px) {
   .app-shell { grid-template-columns: 75px minmax(0, 1fr); }
@@ -131,7 +145,6 @@ h1 span { color: var(--amber); }
   .brand img { width: 28px; height: 28px; }
   .main-nav { display: flex; margin: 0; padding: 0; gap: 4px; }
   .main-nav a { border: 0; padding: 8px; }
-  .main-nav a:last-child { display: none; }
   .topbar { min-height: 48px; padding: 10px 17px; }
   .topbar-right { font-size: 0; }
   main { padding: 20px 17px 40px; }
@@ -143,6 +156,8 @@ h1 span { color: var(--amber); }
   .journey-count, .checked-at { display: none; }
   .project-state { font-size: 10px; text-align: right; }
   .project-name small { max-width: 185px; }
+  .run-row { grid-template-columns: 85px minmax(0, 1fr) 20px; gap: 8px; }
+  .run-row > span:nth-child(3), .run-row > span:nth-child(4) { display: none; }
   .detail-grid { grid-template-columns: 1fr; }
   .evidence-panel { min-height: 320px; }
   .detail-next { grid-template-columns: 1fr; gap: 9px; }

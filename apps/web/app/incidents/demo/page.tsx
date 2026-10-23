@@ -23,7 +23,7 @@ export default function DemoIncident() {
         </section>
         <aside className="evidence-panel" aria-labelledby="evidence-heading"><div className="evidence-top"><span>EVIDÊNCIA</span><span>01 / CAPTURA</span></div><div className="evidence-center"><span aria-hidden="true">⌗</span><h2 id="evidence-heading">A imagem da falha aparecerá aqui.</h2><p>As capturas serão produzidas pelo worker Playwright na etapa de execução real.</p></div><div className="evidence-bottom">SEM ARTEFATO NESTA PRÉVIA <span>—</span></div></aside>
       </div>
-      <div className="detail-next"><span>PRÓXIMA ENTREGA</span><p>Runner Playwright: executar uma jornada de demonstração e registrar a etapa que falhou.</p></div>
+      <div className="detail-next"><span>JORNADA REAL</span><p>O runner já executa uma demo local. <Link href="/runs">Veja o histórico e as evidências ↗</Link></p></div>
     </Shell>
   );
 }

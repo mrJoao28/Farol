@@ -10,7 +10,7 @@ export default function Overview() {
   return (
     <Shell section="overview">
       <div className="preview-note" role="status">
-        <span>PRÉVIA</span> Esta tela usa dados ilustrativos. A conexão com o GitHub e as verificações serão implementadas nas próximas entregas.
+        <span>PRÉVIA</span> Os projetos desta visão geral são ilustrativos. <Link href="/runs">Veja as execuções reais da demo local ↗</Link>
       </div>
 
       <section className="overview-head">
@@ -19,9 +19,7 @@ export default function Overview() {
           <h1>Estamos de olho<span>.</span></h1>
           <p className="supporting-copy">{projects.length} projetos. {journeys} jornadas. {incidents} problema para resolver.</p>
         </div>
-        <a className="outlined-action" href="https://github.com/mrJoao28/Farol/blob/main/docs/MVP.md" target="_blank" rel="noreferrer">
-          Ver plano do MVP <span aria-hidden="true">↗</span>
-        </a>
+        <Link className="outlined-action" href="/runs">Executar demo <span aria-hidden="true">↗</span></Link>
       </section>
 
       <section className="incident-focus" aria-labelledby="featured-incident">
