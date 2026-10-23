@@ -4,7 +4,16 @@
 
 Farol é um projeto de monitoramento de jornadas em sites. A proposta é executar ações reais no navegador, identificar a etapa que falhou, guardar evidências e avisar quando um incidente for confirmado.
 
-> Em planejamento: este repositório ainda não contém um produto funcional.
+> Em desenvolvimento: a interface Vigia já pode ser executada localmente. Os dados do painel são ilustrativos; o monitoramento ainda não foi implementado.
+
+## Executar a interface
+
+```bash
+npm ci
+npm run dev
+```
+
+Abra `http://localhost:3000`. Consulte [o guia de desenvolvimento](docs/development.md) para verificações e limitações da entrega atual.
 
 O escopo, a arquitetura proposta, o backlog e os critérios de conclusão estão em [docs/MVP.md](docs/MVP.md).
 
