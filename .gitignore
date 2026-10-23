@@ -3,6 +3,8 @@ node_modules/
 out/
 coverage/
 .farol/
+.secrets/
+*.pem
 *.tsbuildinfo
 .env
 .env.local
