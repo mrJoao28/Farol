@@ -27,6 +27,7 @@ test('healthy and broken demo record the exact failing step and evidence', async
     assert.equal(healthy.status, 'passed');
     assert.equal(healthy.steps.length, 3);
     assert.equal(healthy.screenshot, undefined);
+    assert.equal(JSON.parse(await readFile(join(folder, healthy.id, 'result.json'), 'utf8')).status, 'passed');
 
     const broken = await runJourney(parseJourney({ name: 'Quebrada', steps: [{ action: 'open', path: '/?broken=1' }, ...steps.slice(1)] }), base, folder);
     assert.equal(broken.status, 'failed');
@@ -37,6 +38,9 @@ test('healthy and broken demo record the exact failing step and evidence', async
     assert((await stat(broken.screenshot)).size > 0);
     assert((await stat(broken.trace)).size > 0);
     assert.equal((await readFile(broken.screenshot))[0], 0x89); // PNG
+    const saved = JSON.parse(await readFile(join(folder, broken.id, 'result.json'), 'utf8'));
+    assert.equal(saved.steps[1].status, 'failed');
+    assert.equal(saved.definition.steps[0].path, '/?broken=1');
   } finally {
     server.close();
     await rm(folder, { recursive: true, force: true });

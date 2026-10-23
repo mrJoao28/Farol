@@ -1,11 +1,11 @@
-import { mkdir, rm } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { chromium } from 'playwright';
 import { executeStep, localBaseUrl, type Journey } from './journey.js';
 
 export type StepResult = { index: number; action: string; status: 'passed' | 'failed'; durationMs: number; error?: string };
-export type RunResult = { id: string; journey: string; status: 'passed' | 'failed'; startedAt: string; durationMs: number; steps: StepResult[]; screenshot?: string; trace?: string };
+export type RunResult = { id: string; journey: string; definition: Journey; status: 'passed' | 'failed'; startedAt: string; durationMs: number; steps: StepResult[]; screenshot?: string; trace?: string };
 
 export async function runJourney(journey: Journey, url: string, outputDirectory: string): Promise<RunResult> {
   const base = localBaseUrl(url);
@@ -13,7 +13,7 @@ export async function runJourney(journey: Journey, url: string, outputDirectory:
   const startedAt = new Date().toISOString();
   const start = Date.now();
   const folder = join(outputDirectory, id);
-  const result: RunResult = { id, journey: journey.name, status: 'passed', startedAt, durationMs: 0, steps: [] };
+  const result: RunResult = { id, journey: journey.name, definition: journey, status: 'passed', startedAt, durationMs: 0, steps: [] };
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext();
   const deadline = setTimeout(() => { void browser.close(); }, 60_000);
@@ -50,7 +50,8 @@ export async function runJourney(journey: Journey, url: string, outputDirectory:
     clearTimeout(deadline);
     result.durationMs = Date.now() - start;
     await browser.close();
-    if (result.status === 'passed') await rm(folder, { recursive: true, force: true });
   }
+  await mkdir(folder, { recursive: true });
+  await writeFile(join(folder, 'result.json'), JSON.stringify(result, null, 2) + '\n', { flag: 'wx' });
   return result;
 }
