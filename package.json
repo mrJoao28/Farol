@@ -6,7 +6,7 @@
     "dev": "npm run dev --workspace @farol/web",
     "build": "npm run build --workspace @farol/web",
     "start": "npm run start --workspace @farol/web",
-    "typecheck": "npm run typecheck --workspace @farol/web",
+    "typecheck": "npm run typecheck --workspace @farol/web && npm run typecheck --workspace @farol/worker",
     "lint": "npm run lint --workspace @farol/web",
     "demo": "npm run start --workspace @farol/demo-site",
     "journey": "npm run journey --workspace @farol/worker",
