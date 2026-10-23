@@ -10,7 +10,7 @@ export default function Overview() {
   return (
     <Shell section="overview">
       <div className="preview-note" role="status">
-        <span>PRÉVIA</span> Os projetos desta visão geral são ilustrativos. <Link href="/runs">Veja as execuções reais da demo local ↗</Link>
+        <span>PRÉVIA</span> Os projetos desta visão geral são ilustrativos. <Link href="/projects">Veja os projetos cadastrados ↗</Link> ou <Link href="/runs">as execuções reais da demo ↗</Link>
       </div>
 
       <section className="overview-head">

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 type ShellProps = {
   children: React.ReactNode;
-  section: "overview" | "incident" | "runs";
+  section: "overview" | "incident" | "runs" | "projects";
 };
 
 export function Shell({ children, section }: ShellProps) {
@@ -22,7 +22,7 @@ export function Shell({ children, section }: ShellProps) {
           <Link href="/" className={section === "overview" ? "current" : ""} aria-current={section === "overview" ? "page" : undefined}>
             <span className="nav-index">01</span> Visão geral
           </Link>
-          <Link href="/#projects"><span className="nav-index">02</span> Projetos</Link>
+          <Link href="/projects" className={section === "projects" ? "current" : ""} aria-current={section === "projects" ? "page" : undefined}><span className="nav-index">02</span> Projetos</Link>
           <Link href="/incidents/demo" className={section === "incident" ? "current" : ""} aria-current={section === "incident" ? "page" : undefined}>
             <span className="nav-index">03</span> Incidente demonstrativo
           </Link>
@@ -36,7 +36,7 @@ export function Shell({ children, section }: ShellProps) {
 
       <div className="content-column">
         <header className="topbar">
-          <span>FAROL / {section === "overview" ? "VISÃO GERAL" : section === "incident" ? "INCIDENTE" : "EXECUÇÕES"}</span>
+          <span>FAROL / {section === "overview" ? "VISÃO GERAL" : section === "incident" ? "INCIDENTE" : section === "projects" ? "PROJETOS" : "EXECUÇÕES"}</span>
           <span className="topbar-right">DEMONSTRAÇÃO <span className="avatar">JF</span></span>
         </header>
         <main id="main-content">{children}</main>

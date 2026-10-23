@@ -4,7 +4,7 @@
 
 Farol é um projeto de monitoramento de jornadas em sites. A proposta é executar ações reais no navegador, identificar a etapa que falhou, guardar evidências e avisar quando um incidente for confirmado.
 
-> Em desenvolvimento: a interface Vigia usa projetos ilustrativos. A aba **Execuções locais** executa jornadas reais na demo e mostra histórico e evidências; ainda não há agendamento nem projetos externos.
+> Em desenvolvimento: a visão geral usa projetos ilustrativos. O catálogo local já permite adicionar um projeto por URL ou escolher um repositório autorizado por um GitHub App; a aba **Execuções locais** monitora apenas a demo. Ainda não há execução em deploys externos nem agendamento.
 
 ## Executar a interface
 
@@ -16,6 +16,8 @@ npm run dev
 Abra `http://127.0.0.1:3000`. Consulte [o guia de desenvolvimento](docs/development.md) para verificações e limitações da entrega atual.
 
 Para executar jornadas pelo painel, instale o Chromium, copie `apps/web/.env.example` para `apps/web/.env.local`, inicie `npm run demo` e `npm run dev` em terminais separados e abra `/runs`. Os botões executam o caso saudável ou a falha no link de contato. O resultado e a captura ficam disponíveis após recarregar a página. Essa opção só funciona no servidor de desenvolvimento local.
+
+Para cadastrar um projeto, abra `/projects/new` com o mesmo servidor local. Informe o nome e a origem HTTPS do deploy. O GitHub App é opcional; [este guia](docs/github-integration.md) explica como configurá-lo para escolher repositórios permitidos, inclusive privados. O cadastro ainda não executa verificações na URL externa.
 
 ## Executar a primeira jornada
 
