@@ -3,7 +3,7 @@ import Link from "next/link";
 
 type ShellProps = {
   children: React.ReactNode;
-  section: "overview" | "incident";
+  section: "overview" | "incident" | "runs";
 };
 
 export function Shell({ children, section }: ShellProps) {
@@ -26,18 +26,21 @@ export function Shell({ children, section }: ShellProps) {
           <Link href="/incidents/demo" className={section === "incident" ? "current" : ""} aria-current={section === "incident" ? "page" : undefined}>
             <span className="nav-index">03</span> Incidente demonstrativo
           </Link>
+          <Link href="/runs" className={section === "runs" ? "current" : ""} aria-current={section === "runs" ? "page" : undefined}>
+            <span className="nav-index">04</span> Execuções locais
+          </Link>
         </nav>
 
-        <div className="sidebar-footer"><span className="live-dot" /> PRÉVIA DE INTERFACE</div>
+        <div className="sidebar-footer"><span className="live-dot" /> FAROL EM DESENVOLVIMENTO</div>
       </aside>
 
       <div className="content-column">
         <header className="topbar">
-          <span>FAROL / {section === "overview" ? "VISÃO GERAL" : "INCIDENTE"}</span>
+          <span>FAROL / {section === "overview" ? "VISÃO GERAL" : section === "incident" ? "INCIDENTE" : "EXECUÇÕES"}</span>
           <span className="topbar-right">DEMONSTRAÇÃO <span className="avatar">JF</span></span>
         </header>
         <main id="main-content">{children}</main>
-        <footer className="app-footer">FAROL / VEJA ALÉM DO STATUS ONLINE. <span>DADOS ILUSTRATIVOS · SEM VERIFICAÇÕES ATIVAS</span></footer>
+        <footer className="app-footer">FAROL / VEJA ALÉM DO STATUS ONLINE. <span>PROJETOS ILUSTRATIVOS · EXECUÇÕES LOCAIS</span></footer>
       </div>
     </div>
   );
