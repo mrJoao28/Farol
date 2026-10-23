@@ -9,10 +9,12 @@ import { parseJourney } from '../src/journey.js';
 import { runJourney } from '../src/runner.js';
 
 test('healthy and broken demo record the exact failing step and evidence', async () => {
-  const server = createDemoServer().listen(0, '127.0.0.1');
+  const server = createDemoServer();
+  const listening = once(server, 'listening');
+  server.listen(0, '127.0.0.1');
   const folder = await mkdtemp(join(tmpdir(), 'farol-runner-'));
   try {
-    await once(server, 'listening');
+    await listening;
     const address = server.address();
     assert(address && typeof address !== 'string');
     const base = `http://127.0.0.1:${address.port}/`;
