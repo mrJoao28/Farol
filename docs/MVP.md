@@ -88,7 +88,7 @@ flowchart TD
 
 ## 5. Identidade e experiência
 
-**Nome:** Farol. **Mensagem:** “Saiba quando seu site para de funcionar para quem o usa.” Interface de observabilidade clara, sem excesso de gráficos: fundo azul-marinho/grafite, superfícies claras ou escuras com contraste adequado, acento ciano para ações, verde para saudável, âmbar para atenção e vermelho para falha. O ícone deve remeter ao feixe de um farol e ser legível em 16 px. Status nunca depende só de cor; sempre incluir texto/ícone. Dashboard inicial: cartão de cada site, última verificação, jornada afetada e botão “Ver evidência”.
+**Nome:** Farol. **Mensagem:** “Saiba quando seu site para de funcionar para quem o usa.” Direção visual escolhida: **Vigia**. Superfícies verde-escuras `#152321`, texto creme `#F2EEE2`, luz âmbar `#F3B878`, alerta coral `#FF876E` e êxito verde `#BDD69B`. Tipografia forte, navegação compacta, diagnósticos em primeiro plano e listas estruturadas; evitar excesso de cartões, efeitos de vidro ou gráficos decorativos. O símbolo representa uma torre geométrica e dois feixes de luz; as versões vetoriais estão em [`brand/`](../brand/). Status nunca depende só de cor; sempre incluir texto/ícone. A arte de abertura serve à apresentação do produto; o painel operacional prioriza legibilidade e evidências.
 
 ## 6. Testes e definição de pronto
 
