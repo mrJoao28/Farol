@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo Farol</title>
+  <desc id="desc">Uma torre geométrica projeta dois feixes de luz à direita.</desc>
+  <path fill="#F2EEE2" d="M13 15h17l3 6H10l3-6Zm3 8h11v27H16V23Zm-4 29h19v5H12v-5Z"/>
+  <path fill="#F3B878" d="m32 17 22-9v10l-22 8v-9Zm0 13 18-4v9l-18 4v-9Z"/>
+</svg>
